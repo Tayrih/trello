@@ -121,7 +121,7 @@ li.left {
   height: auto;
   padding: 5px;
   border-radius: 5px;
-
+  margin: 5px;
 }
 
 #new-input {
@@ -148,4 +148,24 @@ input {
   border-radius: 5px;
   color: #fff;
   font-weight: bold;
+}
+
+.contenido {
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.add-homework {
+  text-decoration: none;
+  color: #b5b5b5;
+  display: block;
+  padding: 5px;
+}
+
+.add-homework:hover {
+  width: 100%;
+  text-decoration: underline;
+  color: #696969;
+  cursor: pointer;
 }

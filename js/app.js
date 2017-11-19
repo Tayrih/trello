@@ -7,13 +7,20 @@ inputBox.addEventListener('click', function () {
   createInput(event);
 });
 
+// funcion para que no se recargue la pagina
+function nothing() {
+
+}
+
+// funcion para guardar texto ingresado al input
 function createInput(event) {
   var contentForm = document.createElement('form');
   var newInput = document.createElement('input');
   var buton = document.createElement('button');
   var spanIcon = document.createElement('span');
 
-  contentForm.setAttribute('class', 'new-form');
+  contentForm.setAttribute('class', 'new-form left');
+  contentForm.setAttribute('onSubmit', "nothing(); return false"); // para que no recargue la pagina
   newInput.setAttribute('type', 'text');
   newInput.setAttribute('name', 'new-input');
   newInput.setAttribute('id', 'new-input');
@@ -30,24 +37,35 @@ function createInput(event) {
   contentForm.appendChild(buton);
   contentForm.appendChild(spanIcon);
 
-  var form =document.getElementsByClassName("new-form")[0];
+  var form =document.getElementsByClassName("new-form left")[0];
   var butonSave = document.getElementById('new-buton');
   var newInputBox = document.getElementById('new-input');
 
+  // evento click para guardar el texto ingresado
   butonSave.addEventListener('click', function () {
     if(newInputBox.value) {
         var contentTextList = document.createElement('div');
         var pValue = document.createElement('p');
-        var pNewTarea = document.createElement('p');
+        var aNewTarea = document.createElement('a');
 
-        pNewTarea.textContent = 'Añadir tarea';
+        contentTextList.setAttribute('class', 'new-form left');
+        pValue.setAttribute('class', 'contenido');
+        aNewTarea.setAttribute('href', '#');
+        aNewTarea.setAttribute('class', 'add-homework');
+
+        aNewTarea.textContent = 'Añadir tarea';
         pValue.textContent = newInputBox.value;
-        
+
         contentTextList.appendChild(pValue);
-        contentTextList.appendChild(pNewTarea);
+        contentTextList.appendChild(aNewTarea);
 
         contentInput.insertBefore(contentTextList,form);
-        console.log('hola');
+        newInputBox.value = '';
+
+        var newTarea = aNewTarea.getElementsByClassName('add-homework');
+        newTarea.addEventListener('click', function () {
+          console.log('tarea');
+        });
     }
   });
 
