@@ -1,7 +1,5 @@
 var contentInput = document.getElementById('box-table');
 var inputBox = document.getElementById('input-box');
-var butonSave = document.getElementById('new-buton');
-var newInputBox = document.getElementById('new-input');
 
 // evento click para el cambio por un formulario
 inputBox.addEventListener('click', function () {
@@ -32,10 +30,25 @@ function createInput(event) {
   contentForm.appendChild(buton);
   contentForm.appendChild(spanIcon);
 
-  butonSave.addEventListener('click', createNewText);
+  var form =document.getElementsByClassName("new-form")[0];
+  var butonSave = document.getElementById('new-buton');
+  var newInputBox = document.getElementById('new-input');
 
-}
+  butonSave.addEventListener('click', function () {
+    if(newInputBox.value) {
+        var contentTextList = document.createElement('div');
+        var pValue = document.createElement('p');
+        var pNewTarea = document.createElement('p');
 
-function createNewText(event) {
-  console.log("holi");
+        pNewTarea.textContent = 'Añadir tarea';
+        pValue.textContent = newInputBox.value;
+        
+        contentTextList.appendChild(pValue);
+        contentTextList.appendChild(pNewTarea);
+
+        contentInput.insertBefore(contentTextList,form);
+        console.log('hola');
+    }
+  });
+
 }
