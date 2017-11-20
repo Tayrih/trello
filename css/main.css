@@ -169,3 +169,46 @@ input {
   color: #696969;
   cursor: pointer;
 }
+
+.new-form.card {
+    padding: 0;
+    width: 95%;
+}
+
+textarea#new-input-card {
+    display: inline-block;
+    margin-bottom: 5px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    resize: none;
+    border: none;
+}
+
+button#new-buton-card {
+    width: 70px;
+    height: 30px;
+    background-color: #5aac44;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+
+}
+
+p.content-list {
+    height: auto;
+    width: 95%;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
