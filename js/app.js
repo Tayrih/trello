@@ -2,8 +2,6 @@ var contentGeneral = document.getElementById('box-table');
 var inputBox = document.getElementById('input-box');
 var referencia = document.getElementById('referencia');
 
-
-
 // evento click para el cambio por un formulario
 inputBox.addEventListener('click', function () {
   contentGeneral.removeChild(inputBox);
@@ -17,7 +15,8 @@ function createInput(event) {
   var buton = document.createElement('button');
   var spanIcon = document.createElement('span');
 
-  contentForm.setAttribute('class', 'new-form left');
+  contentForm.setAttribute('class', 'card m-2 p-2');
+  contentForm.setAttribute('style', 'width: 18rem;');
   contentForm.setAttribute('id', 'first-form');
   newInput.setAttribute('type', 'text');
   newInput.setAttribute('name', 'new-input');
@@ -68,8 +67,8 @@ function newlist(contentGeneral, newInput){
       var pValue = document.createElement('p');
       var pNewTarea = document.createElement('p');
 
-      contentTextList.setAttribute('class', 'new-form left');
-      pValue.setAttribute('class', 'contenido');
+      contentTextList.setAttribute('class', 'card m-2 p-2');
+      contentTextList.setAttribute('style', 'width: 18rem;');
       pValue.setAttribute('id', 'title');
       pNewTarea.setAttribute('class', 'add-homework');
 
@@ -106,7 +105,6 @@ function newtareas(contentTextList, pNewTarea){
         var butonTarea = document.createElement('button');
         var spanIcon = document.createElement('span');
 
-        contentForm.setAttribute('class', 'new-form-tarea card');
         newInput.setAttribute('id', 'new-input-card');
         newInput.setAttribute('placeholder', 'Añadir una tarea...');
         butonTarea.setAttribute('id', 'new-buton-card');
@@ -141,10 +139,9 @@ function newtareas(contentTextList, pNewTarea){
 
         // evento click para guardar el texto ingresado
         butonTarea.addEventListener('click', function () {
-          console.log('Te odio js');
           if(newInput.value) {
               var pCard = document.createElement('p');
-              pCard.setAttribute('class', 'content-list');
+              pCard.setAttribute('class', 'content-list rounded p-2');
               pCard.textContent = newInput.value;
               contentTextList.insertBefore(pCard,contentForm);
               newInput.focus();
@@ -169,7 +166,7 @@ function resetBtnListas(){
     oldContextList.appendChild(pOldTarea);
     tareaOLD[0].remove();  
     pOldTarea.addEventListener('click', function () {
-      newtareas(oldContextList, pOldTarea); //AQUI ESTA LA RECURSIVIDAD RECURSIVIDAD
+      newtareas(oldContextList, pOldTarea); // recursividad
     });
   };
 
